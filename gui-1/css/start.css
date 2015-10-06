@@ -1,0 +1,86 @@
+ /*                                                                 
+        Name: Justin Nguyen   
+        Contact: justin_nguyen@student.uml.edu                                                                                                                    
+        Major: Computer Science                                                                                                                                   
+        School: University of Massachusetts Lowell
+
+        Date created: September 3, 2015                                                                                                                           
+        91.461 Assignment 2: Creating Your First Web Page   
+        Description: Basic CSS code for Assignment 2 
+        Copyright [2015] by Justin Nguyen. All rights reserved.
+        May be freely copied or excerpted for educational purposes with credit to the author.
+	                                                                                     */
+
+/* Since it is a my first webpage, I went with the theme of making everything centered and spaced away enough to not seem clustered. */
+h1 {
+    color: royalblue;
+    font-size: 50px;
+    font-family: serif; 
+}
+
+/* CSS for my description section */
+.description {
+    padding-bottom: 3%;
+    text-align: center;
+}
+
+/* Code to keep images centered on the page */
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+body {
+    background-color: #b0c4de;
+    font-family: sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+/* CSS code I created to keep the text at the bottom of the page */
+.bottom {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 80%;
+}
+
+li {
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-left: 37%;
+    padding-bottom: 2%;
+}
+
+/* This section was taken from the w3school.
+   Source at http://www.w3schools.com/css/css_navbar.asp# */
+
+a:link, a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #162d97;
+    text-align: center;
+    padding: 6px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover, a:active {
+    background-color: #5471f8;
+}
+
+
