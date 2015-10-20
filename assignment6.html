@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/start.css">
+    <link rel="shortcut icon" href="">
+
+    <!--                                                                                                                                                           
+        Name: Justin Nguyen                                                                                                                                        
+        Contact: justin_nguyen@student.uml.edu                                                                                                                     
+        Major: Computer Science                                                                                                                                    
+        School: University of Massachusetts Lowell                                                                                                                                                                                                                                                                                 
+        Date created: October 16, 2015                                                                                                                          
+        91.461 - GUI 1                                                                                                         
+        Description: Assignment 6 - Creating an Interactive Dynamic Table
+        Copyright [2015] by Justin Nguyen. All rights reserved.                                                                                                    
+        May be freely copied or excerpted for educational purposes with credit to the author.                                                                      
+    -->
+
+    <!--
+  load jQuery library from the Google Content Delivery Network (CDN)
+  see http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/
+  however, note that you obviously must be online for this to work
+  alternatively, you can download jQuery and store it locally from
+     http://jquery.com/download/
+    -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            mulTab();
+            jQuery('form').on('submit', function (event) { //src: http://stackoverflow.com/questions/1357118/event-preventdefault-vs-return-false
+                event.preventDefault();
+                mulTab();
+            });
+        });
+    </script>
+
+    <!-- script to determine browser type and set first paragraph class appropriately -->
+    <script type="text/javascript">
+        var strFirstParaClass = "";
+        var strNavString = navigator.userAgent;
+        // console.log( navigator.userAgent ) ;
+        // console.log( strNavString ) ;
+        if (strNavString.indexOf("Firefox") !== -1) {
+            strFirstParaClass = "Firefox";
+        } else if (strNavString.indexOf("Chrome") !== -1) {
+            strFirstParaClass = "Chrome";
+        } else if (strNavString.indexOf("Safari") !== -1) {
+            strFirstParaClass = "Safari";
+        }
+    </script>
+
+    <script type="text/javascript">
+        function mulTab() {
+            /*Got help for parseInt from:
+             *Source: http://stackoverflow.com/questions/7230553/reading-numbers-from-inputs-with-javascript-always-returns-nan
+             * */
+            var rowSt = parseInt(jQuery('input[name=rowSt]').val()), //Row starting value
+                    rowEn = parseInt(jQuery('input[name=rowEn]').val()), //Row ending value
+                    colSt = parseInt(jQuery('input[name=colSt]').val()), //Column starting value
+                    colEn = parseInt(jQuery('input[name=colEn]').val()); //Column ending value
+
+            var c = colSt; //To increment.
+
+            /* Pre-reqs for entering numbers */
+            /* Check to make sure that the end ranges are larger than the starting range */
+            if (rowSt > rowEn) {
+                alert("You need to input a larger number!");
+                return false;
+            }
+            if (colSt > colEn) {
+                alert("You need to input a larger number!");
+                return false;
+            }
+
+            //Check if they have have entered anything
+            if (rowSt === null || rowSt === "" ||
+                    rowEn === null || rowEn === "" ||
+                    colSt === null || colSt === "" ||
+                    colEn === null || colEn === "") {
+                alert("You are missing a number in a field!");
+                return false;
+            }
+
+            //Check that the rows and column that the user inputted are actually numbers
+            if (typeof rowSt === 'number' && typeof rowEn === 'number' && typeof colSt === 'number' && typeof colEn === 'number') {
+                var table = '<table>';
+
+                //start making the colomns and rows
+                table = '<tr>' + '<td></td>';
+                for (var i = rowSt; i <= rowEn; i++) {
+                    table += '<td>' + i + '</td>';
+                }
+                for (var j = colSt; j <= colEn; j++) {
+                    table += '<tr>';
+                    table += '<td>' + c + '</td>';
+                    for (var k = rowSt; k <= rowEn; k++) {
+                        table += '<td>' + j * k + '</td>';
+                    }
+                    table += '</tr>';
+                    c++; //Increment the column number or else it won't change
+                }
+                table += '</table>';
+                jQuery('#table').html(table); //Source help from Professor Heines on Piazza: 
+                //https://piazza.com/class/icm9jynacvn5kx?cid=26
+            }
+            else {
+                alert("You have entered something that isn't a number. Please try again.");
+            }
+        }
+    </script>
+
+    <title>Assignment 6 - Justin Nguyen</title>
+</head>
+
+<!-- Contact Page -->
+
+<body class="main">
+    <h1 class="center">Creating an Interactive Dynamic Table</h1>
+
+    <ul class="nav">
+        <li class="nav"><a href="index.html" class="links">Home</a></li>
+        <li class="nav"><a href="assignments.html" class="links">Assignments</a></li>
+        <li class="nav"><a href="contact.html" class="links">Contact</a></li>
+        <li class="nav"><a href="about.html" class="links">About</a></li>
+    </ul>
+
+    <h2>Dynamic Multiplication Table</h2>
+
+    <!--Assignment 6-->
+    <form> 
+        Horizonal Rows<br>
+        Range:
+        <input type="text" size="5" value="1" name="rowSt" />
+        to
+        Range: 
+        <input type="text" size="5" value="5" name="rowEn" />
+        <br> <br>
+        Vertical Columns
+        <br>
+        Range:
+        <input type="text" size="5" value="1" name="colSt" />
+        to
+        Range:
+        <input type="text" size="5" value="5" name="colEn" />
+        <br>
+        <input type="submit" value="Submit" />
+    </form> <br>
+
+    <div id="table"></div>
+    
+    <br><br>
+    
+    <!--Tried to make the image go to the right of the site but realized
+        that it couldn't because of the potential increase of the size of the table.-->
+    <img src="images/mathrules.jpg" alt="math-rules!" style="width:216px; height:140px">
+
+    <!--  Footer -->
+    <div class="clearfooter"></div>
+    <div id="footer"> Under Development [2015] Justin Nguyen </div>
+</body>
+</html>
