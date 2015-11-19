@@ -96,12 +96,15 @@ li.nav {
     padding-bottom: 4%;
 }
 
-li.links { padding-bottom: 5%}
+li.links { 
+    padding-bottom: 5%;
+    display: inline-block; 
+}
 
 /* Assignment links */
 #assign {
     list-style-type: none;
-    float: left;
+
 }
 
 /* Still figuring out how to make the navigation bar centered for all screens */
@@ -148,6 +151,10 @@ a.links:hover, a.links:active {
 
 /* Created so I can have images to the right of text */
 img.float-right {
+    float: right;
+}
+
+ul.float-right {
     float: right;
 }
 
@@ -226,5 +233,50 @@ table {
 .math-rules {
     display: block;
     float: right;
-    
+
 }
+
+/* Assignment 8 CSS */
+img.move-top {
+    float: right;
+    margin-right: 100px;
+}
+
+div.move-right {
+    position: relative;
+    float: right;
+    font-size: 12px;
+    margin-right: 50px;
+}
+
+span.bold-this {
+    font-weight: bolder;
+}
+
+#slider {
+    margin: 10px;
+}
+.ui-slider-horizontal{ 
+    height: 15px;
+    width: 200px;
+}
+
+.ui-slider .ui-slider-handle {
+    height: 5px;
+    width: 10px;
+    padding-left: 5px;
+}
+
+.ital {
+    font-style: italic;
+}
+
+/*Tabs*/
+#dialog label, #dialog input { display:block; }
+#dialog label { margin-top: 0.5em; }
+#dialog input, #dialog textarea { width: 95%; }
+#tabs { margin-top: 1em; }
+#tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+#add_tab { cursor: pointer; }
+
+

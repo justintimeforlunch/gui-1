@@ -157,4 +157,3 @@ function mulTab() {
 $("input").focus(function () {
     $(this).next("span").css("display", "inline");
 });
-

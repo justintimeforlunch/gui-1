@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- My CSS -->
+        <link type="text/css" rel="stylesheet" href="css/start.css">
+        <!-- Required CSS -->
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+        <!--                                                                                                                                                           
+            Name: Justin Nguyen                                                                                                                                        
+            Contact: justin_nguyen@student.uml.edu                                                                                                                     
+            Major: Computer Science                                                                                                                                    
+            School: University of Massachusetts Lowell                                                                                                                                                                                                                                                                                 
+            Date created: November 10, 2015                                                                                                                          
+            91.461 - GUI 1                                                                                                         
+            Description: Assignment 8 - Using the jQuery UI Slider and Tab Widgets
+            Copyright [2015] by Justin Nguyen. All rights reserved.                                                                                                    
+            May be freely copied or excerpted for educational purposes with credit to the author.                                                                      
+        -->
+
+        <title>Assignment 8 - Justin Nguyen</title>
+    </head>
+
+    <body class="main">
+        <h1 class="center">Creating an Interactive Dynamic Table</h1>
+
+        <ul class="nav">
+            <li class="nav"><a href="index.html" class="links">Home</a></li>
+            <li class="nav"><a href="assignments.html" class="links">Assignments</a></li>
+            <li class="nav"><a href="contact.html" class="links">Contact</a></li>
+            <li class="nav"><a href="about.html" class="links">About</a></li>
+        </ul>
+
+        <h2>Dynamic Multiplication Table</h2>
+
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Multiplication Table</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+            </ul>
+            <div id="tabs-1">
+                <!--Assignment 8-->
+                <form id="mulTab" > 
+                    <p>Horizonal Rows</p>
+                    <p>Minimum Range: <input type="text" size="5" value="1" id="rowSt" name="rowSt"/></p>
+                    <div id="slider1"></div>
+                    <img class="move-top" src="images/mathrules.jpg" alt="math-rules!">
+                    
+                    <p>Maximum Range: <input type="text" size="5" value="5" id="rowEn" name="rowEn"/></p>
+                    <div id="slider2"></div>
+                    
+                    <p>Vertical Columns</p>
+                    <p>Minimum Range:<input type="text" size="5" value="1" id="colSt" name="colSt"/></p>
+                    <div id="slider3"></div>
+
+                    <p>Maximum Range: <input type="text" size="5" value="5" id="colEn" name="colEn"/></p>
+                    <div id="slider4"></div>
+                    
+                    <input type="submit" id="submit" value="Submit" />
+                    <div class="move-right">Note: Tabs are displayed as: <span class="bold-this"> Parameter(Row Start, Row End, Column Start, Column End)</span></div>
+                </form>
+
+                <p><button id="selected_tabs">Remove selected tabs</button></p>
+                <div id="check"></div>
+                <button id="remove_tabs">Remove all tabs</button>
+                
+
+            </div>
+        </div>
+
+        <!--  Footer -->
+        <div class="clearfooter"></div>
+        <div id="footer"> Under Development [2015] Justin Nguyen </div>
+
+        <!-- jQuery JavaScript -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <!-- Assignment 8 JavaScript -->
+        <script src='js/assignment8.js'></script>
+    </body>
+</html>
