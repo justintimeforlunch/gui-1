@@ -202,7 +202,7 @@ $().ready(function () {
 
     var tabs = $("#tabs").tabs();
 
-    
+    //Source help: Got advice on how to implement delete from a classmate since I was having trouble
     $('#remove_tabs').click(function (e) {
         var num_tabs = $("#tabs > ul > li").size() + 1;
         //var panelId = $(this).closest("li").remove().attr("aria-controls");
@@ -221,10 +221,7 @@ $().ready(function () {
     function createCheckBox(index_tabs) {
         var checkbox = document.createElement("input");
         index_tabs--;
-        // Set multiples key value pair for setAttribute.
-        //checkbox.setAttribute("type", "checkbox");
-        //checkbox.setAttribute("name", "ch-" + index_tabs);
-        //checkbox.setAttribute("id", "ch-" + index_tabs);
+        
         checkbox.type = "checkbox";
         checkbox.name = "ch-" + index_tabs;
         checkbox.id = "ch-" + index_tabs;
@@ -239,24 +236,12 @@ $().ready(function () {
     }
     
     $('#selected_tabs').click(function () {
-        /* Store id of checked checkbox to an array then loop through.
-           If check box is checked, delete checkbox, label, table and tab.
-            /* This code will delete the first tab and tabs
-            $('#tabs > ul > li').remove();
-            $('#tabs > #tab-1').remove();
-            $("input[type='checkbox']:checked").remove();
-            $("label").remove();
-            ***********************************************/
+   
         var selected = [];
         $('input:checkbox:checked').each(function () {
             selected.push($(this).attr('id'));
         });
-        /* Set active tab to unchecked checkbox.
-        Not exactly sure why this doesn't work.
-        $('#tabs').tabs("refresh");
-        $("#tabs").tabs("option", "active", $('input:checkbox').attr('checked',false).val());
-        ***********************************************************************************/
-        // Remove all checked checkbox that matched elements in array selected.
+       
         for (var m = 0; m < selected.length; m++) {
             $("#ch-" + selected[m].replace(/\D/g, '')).remove();
             $("#lb-" + selected[m].replace(/\D/g, '')).remove();
