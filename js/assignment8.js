@@ -203,7 +203,19 @@ $().ready(function () {
     var tabs = $("#tabs").tabs();
 
     //Source help: Got advice on how to implement delete from a classmate since I was having trouble
-    $('#remove_tabs').click(function (e) {
+      $("#remove_tabs").click( function() {
+    	$('input:checkbox').each(function(){
+            $('#tabs').tabs("option", "active", $("input:checkbox:not(:checked)"));
+            $("#ch-" + ($(this).attr('id')).replace(/\D/g, '')).remove();
+            $("#lb-" + ($(this).attr('id')).replace(/\D/g, '')).remove();
+            $('#ui-id-' + ($(this).attr('id')).replace(/\D/g, '')).remove();
+            $("#tabs-" + ($(this).attr('id')).replace(/\D/g, '')).remove();
+            $("li[aria-controls='tabs-" + ($(this).attr('id')).replace(/\D/g, '') +"']").remove();            
+           
+    	});
+    });
+    //test remove
+    /*$('#remove_tabs').click(function (e) {
         var num_tabs = $("#tabs > ul > li").size() + 1;
         //var panelId = $(this).closest("li").remove().attr("aria-controls");
         // Loop through each tabs and table and delete everything.
@@ -213,10 +225,13 @@ $().ready(function () {
             $("#ui-id-" + t).remove();
             $("#tabs-" + t).remove();
             $("#id" + t).remove();
+            //$("li[aria-controls='tabs-" + ($(this).attr('id')).replace(/\D/g, '') +"']").remove();    
+            $('#tabs').tabs("option", "active", $("input:checkbox:not(:checked)"));
+            $("li:has('a'):contains('#tab-" + t + "')").remove();
             //$("li:has('a'):contains('Tab')").remove();
         }
         $('#tabs').tabs("refresh");
-    });
+    });*/
     
     function createCheckBox(index_tabs) {
         var checkbox = document.createElement("input");
@@ -247,7 +262,8 @@ $().ready(function () {
             $("#lb-" + selected[m].replace(/\D/g, '')).remove();
             $("#tab-" + selected[m].replace(/\D/g, '')).remove();
             $('#ui-id-' + selected[m].replace(/\D/g, '')).remove();
-            $('#tabs').tabs("option", "active", $("input:checkbox:not(:checked)"));
+            $("li[aria-controls='tabs-" + selected[m].replace(/\D/g, '') +"']").remove();
+            //$('#tabs').tabs("option", "active", $("input:checkbox:not(:checked)"));
         }
         $('#tabs').tabs("refresh");
     });
