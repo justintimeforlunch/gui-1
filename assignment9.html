@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link type="text/css" rel="stylesheet" href="css/start.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+        <!--                                                                                                                                                          
+        Name: Justin Nguyen                                                                                                                                       
+        Contact: justin_nguyen@student.uml.edu                                                                                                                    
+        Major: Computer Science                                                                                                                                   
+        School: University of Massachusetts Lowell                                                                                                                
+        Date modified: December 8, 2015                                                                                                                                                                                                               
+        Description: Assignment 9: Implementing a Bit of Scrabble with Drag-and-Drop                                                                                  
+        Copyright [2015] by Justin Nguyen. All rights reserved.                                                                                                   
+        May be freely copied or excerpted for educational purposes with credit to the author.                                                                     
+        -->
+
+        <title>Assignment 9 - Justin Nguyen</title>
+    </head>
+
+    <!-- Assignment 9 Page -->
+    <body class="main">
+        <h1 class="center">Implementing a Bit of Scrabble with Drag-and-Drop</h1>
+
+        <ul class="nav">
+            <li class="nav"><a href="index.html" class="links">Home</a></li>
+            <li class="nav"><a href="assignments.html" class="links">Assignments</a></li>
+            <li class="nav"><a href="contact.html" class="links">Contact</a></li>
+            <li class="nav"><a href="about.html" class="links">About</a></li>
+        </ul>
+
+        <h2 class="center">Scrabble with Drag-and-Drop</h2>
+
+        <!--insert scrabble board-->
+        <div id="scrabble-board"></div>
+
+        <span><img id="scrabble-rack" src="images/scrabble-rack.png" alt="scrabble-rack"></span>
+        <!--insert randomized scrabble tiles-->
+        <div id="tiles"></div> 
+        
+     
+        
+        <div id="letters"></div>
+        <span id="score_display">Score:<span id="score"></span>
+        </span>
+        <div id="rack"></div>
+        <input type="button" id="restart" value="Start New Game" onClick="window.location.reload()">
+        <!-- Text that is always at the bottom of the page -->    
+        <div class="clearfooter"></div>
+        <div id="footer">Under Development [2015] Justin Nguyen</div>
+
+        <!-- jQuery JavaScript incase the internet is down -->
+        <!--<script src="js/jquery-1.9.1.js"></script>-->
+        
+        <!-- jQuery JavaScript -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+
+
+        <!-- Assignment 9 JavaScript -->
+        <script src='js/assignment9.js'></script>
+    </body>
+</html>

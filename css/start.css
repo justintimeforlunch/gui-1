@@ -3,7 +3,8 @@
         Contact: justin_nguyen@student.uml.edu                                                                                                                    
         Major: Computer Science                                                                                                                                   
         School: University of Massachusetts Lowell                                                                                                                
-        Date created: September 3, 2015                                                                                                                           
+        Date created: September 3, 2015 
+        Date updated: December 8, 2015
         91.461 Assignment 5: Formatting Dynamic Text                                                                                             
         Description: This page was created as the home page of my website                                                                                  
         Copyright [2015] by Justin Nguyen. All rights reserved.                                                                                                   
@@ -14,7 +15,7 @@ body.main {
     min-height: 100%;
     margin-bottom: 2em;
     position: relative;
-    font-family: 'Roboto Condensed', sans-serif;
+    /* font-family: 'Roboto Condensed', sans-serif; */
 }
 
 h1 {
@@ -46,8 +47,8 @@ html, body {
     padding: 0;
     border: 0;
     margin: 0;
-    padding-left: 7%;
-    padding-right: 7%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 /* Centers images on a page. */
@@ -204,7 +205,7 @@ hr {
     border: 4px solid black;
 }
 
-/* CSS for assignment 6 */
+/* CSS for assignment 6 
 
 td {
     border:1px solid black;
@@ -225,10 +226,10 @@ tr:first-child > td{
     color: #fff;
     font-weight: bold;
 }
-
-table {
+*/
+/*table {
     float: left;
-}
+}*/
 
 .math-rules {
     display: block;
@@ -279,4 +280,113 @@ span.bold-this {
 #tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
 #add_tab { cursor: pointer; }
 
+/*Assignment 9 CSS */
+#tile-drag_0 { 
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: auto;
+    left: auto;
+    border: red;
+}
+#droppable { width: 50px; height: 50px; float: left; display: inline-block;}
 
+img {
+    width: 50px;
+    height: 50px;
+    padding-right: 5%;
+}
+
+#tiles {
+    display: block;
+    padding-left: 20%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+#restart {
+    color: white;
+    background: black;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+#scrabble-board {
+    display: block;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+
+#scrabble-rack {
+    width: 640px;
+    height: 91px;
+    position: absolute;
+    padding-left: 15%;
+}
+
+#score {
+    display: block;
+    font-size: 40px;
+    position: absolute;
+    margin: 0 auto;
+    float: left;
+    padding-left: 20%;
+}
+#score_display {
+    display: block;
+    font-size: 40px;
+    position: absolute;
+    margin: 0 auto;
+    float: left;
+    padding-left: 15%;
+}
+#letters {
+    display: block;
+    font-size: 55px;
+    position: absolute;
+    padding-left: 70%;
+}
+
+//Took this CSS from Jason Downing.
+/* Double / Triple letter CSS */
+.double_letter {
+    background: url("../images/double_letter.png");
+}
+
+.triple_letter {
+  /* background: blue;  */
+  background: url("../images/triple_letter.png");
+}
+
+.double_letter {
+    background: url("../images/double_letter.png");
+}
+
+/* Double / Triple word CSS */
+.double_word {
+    background: url("../images/double_word.png");
+}
+
+.triple_word {
+  /*background: red;*/
+  background: url("../images/triple_word.png");
+}
+
+.star {
+    background: url("../images/gold-star.jpg");
+}
+
+td {
+  background: #D2B48C;
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  z-index: 3;
+  /*  THIS IS INCREDIBLY IMPORTANT. SEE THIS URL FOR DETAILS:
+                    https://stackoverflow.com/questions/15712011/why-does-drag-go-behind-target-div */
+}
+
+table {
+    border: 2px solid black;
+}
